@@ -15,7 +15,7 @@ import java.net.UnknownHostException
 
 class UrlProvider {
     fun getBaseUrl(): String {
-        return "https://api.github.com/"
+        return "https://api.hub.fastgit.xyz/"
     }
 }
 
