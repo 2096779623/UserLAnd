@@ -1,1 +1,25 @@
+name: Build
 
+on:
+  push:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Gradle Build Action
+        uses: gradle/gradle-build-action@v2.1.6
+        
+      - name: Run Build
+        run: ./gradlew build
+        
+      - name: Upload build apk
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-apk
+          path: build/*
